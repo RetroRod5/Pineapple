@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgwq4wa36ujqg"]
+
+[ext_resource type="PackedScene" uid="uid://ccfvdpvjnp2t0" path="res://Scenes/Character.tscn" id="1_2gd4f"]
+[ext_resource type="PackedScene" uid="uid://i263sljem3nv" path="res://Scenes/rigid.tscn" id="2_0g2wx"]
+[ext_resource type="PackedScene" uid="uid://dvslvg4bcb2id" path="res://Scenes/curvy.tscn" id="3_pyk7t"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rxeo1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2gd4f"]
+size = Vector2(10, 10)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gd4f"]
+sky_top_color = Color(0.901961, 0.85098, 0.54902, 1)
+sky_horizon_color = Color(0.845887, 0.549841, 0.695473, 1)
+ground_bottom_color = Color(0.0590545, 0.0450471, 0.029574, 1)
+ground_horizon_color = Color(0.676369, 0.400627, 0.639909, 1)
+
+[sub_resource type="Sky" id="Sky_0g2wx"]
+sky_material = SubResource("ProceduralSkyMaterial_2gd4f")
+
+[sub_resource type="Environment" id="Environment_pyk7t"]
+background_mode = 2
+sky = SubResource("Sky_0g2wx")
+ambient_light_color = Color(0.552956, 0.552956, 0.552956, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_rxeo1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_2gd4f")
+
+[node name="Character" parent="." instance=ExtResource("1_2gd4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.831256, 0.555889, 0, -0.555889, 0.831256, 0.00195312, 4.14877, 6.56937)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pyk7t")
+
+[node name="Rigid" parent="." instance=ExtResource("2_0g2wx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43705, 1, 2.20931)
+
+[node name="Curvy" parent="." instance=ExtResource("3_pyk7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08544, 1, -1.64797)

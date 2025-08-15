@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1755201870
+icon.svg::CompressedTexture2D/CompressedTexture2D::5638354724856640682::1754691625::1754691635::1::::<><><>0<>0<>8989ce540338258dc75fbfc481383671<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Assets/::1754691678
+::res://Scenes/::1755121849
+Arena.tscn::PackedScene::2853994472846234330::1755121810::0::1::::<><><>0<>0<><>::uid://ccfvdpvjnp2t0::::res://Scenes/Character.tscn<>uid://i263sljem3nv::::res://Scenes/rigid.tscn<>uid://dvslvg4bcb2id::::res://Scenes/curvy.tscn
+Character.tscn::PackedScene::4924822178380433715::1755121810::0::1::::<><><>0<>0<><>::uid://1pd2usgggrip::::res://Scripts/character.gd
+curvy.tscn::PackedScene::8671092315631100935::1755121849::0::1::::<><><>0<>0<><>::uid://caphf52wa00kn::::res://Scripts/curvy.gd
+rigid.tscn::PackedScene::619182140296890303::1755121810::0::1::::<><><>0<>0<><>::uid://ckvxbwsbjrjl8::::res://Scripts/rigid.gd
+::res://Scripts/::1755121810
+character.gd::GDScript/GDScript::1856107046867838899::1754866767::0::1::::<>CharacterBody3D<><>0<>0<><>::
+curvy.gd::GDScript::4804242600026803213::1755121810::0::1::::<>CharacterBody3D<><>0<>0<><>::
+rigid.gd::GDScript/GDScript::5519481196607638899::1754869141::0::1::::<>RigidBody3D<><>0<>0<><>::

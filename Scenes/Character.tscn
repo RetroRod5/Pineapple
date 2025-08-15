@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccfvdpvjnp2t0"]
+
+[ext_resource type="Script" uid="uid://1pd2usgggrip" path="res://Scripts/character.gd" id="1_0y7nr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0j3ql"]
+
+[sub_resource type="Gradient" id="Gradient_0y7nr"]
+offsets = PackedFloat32Array(0, 0.478788, 1)
+colors = PackedColorArray(0.113725, 0.305882, 0.309804, 1, 0.801335, 0.793913, 0.0672414, 1, 0.0980392, 0.27451, 0.27451, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jo2ib"]
+gradient = SubResource("Gradient_0y7nr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_677pu"]
+albedo_texture = SubResource("GradientTexture1D_jo2ib")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v7dgu"]
+material = SubResource("StandardMaterial3D_677pu")
+
+[node name="Character" type="CharacterBody3D"]
+script = ExtResource("1_0y7nr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0j3ql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_v7dgu")
