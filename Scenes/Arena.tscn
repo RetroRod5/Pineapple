@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgwq4wa36ujqg"]
+[gd_scene load_steps=8 format=3 uid="uid://bgwq4wa36ujqg"]
 
-[ext_resource type="PackedScene" uid="uid://ccfvdpvjnp2t0" path="res://Scenes/Character.tscn" id="1_2gd4f"]
-[ext_resource type="PackedScene" uid="uid://i263sljem3nv" path="res://Scenes/rigid.tscn" id="2_0g2wx"]
+[ext_resource type="PackedScene" uid="uid://g4h3dgkdttgi" path="res://Scenes/Player.tscn" id="2_0g2wx"]
 [ext_resource type="PackedScene" uid="uid://dvslvg4bcb2id" path="res://Scenes/curvy.tscn" id="3_pyk7t"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rxeo1"]
@@ -33,17 +32,14 @@ shape = SubResource("WorldBoundaryShape3D_rxeo1")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_2gd4f")
 
-[node name="Character" parent="." instance=ExtResource("1_2gd4f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.831256, 0.555889, 0, -0.555889, 0.831256, 0.00195312, 4.14877, 6.56937)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pyk7t")
 
-[node name="Rigid" parent="." instance=ExtResource("2_0g2wx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43705, 1, 2.20931)
-
 [node name="Curvy" parent="." instance=ExtResource("3_pyk7t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08544, 1, -1.64797)
+
+[node name="Player" parent="." instance=ExtResource("2_0g2wx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01514, 1, 2.51182)
